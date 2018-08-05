@@ -34,6 +34,30 @@ def harmonic(A,w):
         eK.append(e_k)
 
 
+def function(dx, fileObj):
+    xList = []
+    fxList = []
+    iList = []
+    x = 0
+    i = 0
+    text = ''
+    while x <= 10:
+        text += "%d  %e  %e \n" %(iList[i], xList[i], fxList[i])
+        iList.append(i)
+        xList.append(x)
+        fx = np.sin(x)*np.log(x + 1)*np.sinh(x)
+        fxList.append(fx)
+        x += dx
+        i += 1
+        
+    #for i in range(0,len(iList)):
+        #text += "%d  %e  %e \n" %(iList[i], xList[i], fxList[i])
+    
+    fileObj.write(text)
+    fileObj.close()
+
+
+    
 
 def graficar(x,y,rows,colum,index,color,title,tx,ty):
     plt.subplot(rows,colum,index)
@@ -44,8 +68,13 @@ def graficar(x,y,rows,colum,index,color,title,tx,ty):
     plt.ylabel(ty,fontsize=10)
 
 
+"""
+file =   open('data.txt', 'w')
+function(0.1, file)
+"""
 
 
+"""
 harmonic(1,2)
 
 plt.figure(figsize=(5,5))
@@ -56,6 +85,6 @@ plt.figure(figsize=(5,5))
 graficar(xT,eP,2,1,1,'blue',"Energia potencial",'X','Ep(x)')
 graficar(vT,eK,2,1,2,'red',"Energia cinetica",'V','Ek(x)')
 plt.show()
-
+"""
 
 
