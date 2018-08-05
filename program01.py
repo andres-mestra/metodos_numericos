@@ -45,6 +45,6 @@ ax.plot(theta,np.cos(theta))
 ax.grid()
 ax.set_xlabel(r"$\theta$", fontsize=14)
 plt.show()
-plt.savefig('cos.png')
+#plt.savefig('cos.png')
 
 
