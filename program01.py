@@ -12,7 +12,7 @@ def factorial(n):
         return  fat 
         
 
-print(factorial(5))
+#print(factorial(5))
 
 
 def cos(x,n):
