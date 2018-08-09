@@ -1,0 +1,62 @@
+"""
+1)Metodo de biseccion:
+sea F una función continua en el intervalo [a,b],
+el teorema del valor medio:
+* Existe un c E (a,b) tq F(c) = 0
+* si F(a)*F(b)<0
+
+Teorema
+
+Supongamos que F E  C[a,b] y F(a)*F(b)<0
+el medoto de bisección genera una secuencia {pi}-(înf)_n=1
+cuyos elementos aproximan un cero de F(denotado por p) con 
+|pi - p| < (b-a)/2^i
+
+
+
+
+Formulas
+
+p1 = (b-a)/2  + a =  (b+a)/2
+
+F(p1):
+F(p1) = 0 => termine
+F(p1) /=  =>:
+  sing(F(p1)) = sing(F(a)) => a = p1, b = b
+  sing(F(p1)) = sing(F(b)) => a = a, b = p1
+
+Criterio de parada
+1op. |pi - pi-1 | < Tol
+2op|F(pi)| < Tol
+3op|(pi-pi-1)/|pi| < Tol
+
+Tolerancia
+2^-52 == 10⁻16
+la tolerancia maxima no puede ser mayor que 10^-16
+
+Pseudocodigo
+
+Inputs:
+1.F(x)
+2. a,b
+3.Tolerancia
+4.Nmax de iteraciones
+
+Procedimiento
+1.verificar: F(a)*F(b)<0
+2. pi = (bi+ai)/2
+3. F(p1) = 0 => termine
+4. sing(F(pi)) = sing(F(ai)) => ai = pi, bi = bi
+   sing(F(pi)) = sing(F(bi)) => ai = ai, bi = pi
+5. si |pi - pi-1 | < Tol  
+   =>  termine
+   else
+   => repita 
+
+
+
+"""
+
+
+
+
