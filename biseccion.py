@@ -66,4 +66,4 @@ if (sign(func(ai))* sign(func(bi))<0):
 else:
    print("Intervalo inadecuado")
 
-print("Solución = %.5f"%func(pi))
+print("Cero de F(x)  = %f , F(pi)= %.5f"%(pi, func(pi)))
