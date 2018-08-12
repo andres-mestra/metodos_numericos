@@ -7,10 +7,7 @@ import numpy as np
 def resolverSist(a,b,c,d,e,f):
     if a != 0:
         try:
-            m = c/a
-            d1 = d - m*b
-            f1 = f - m*e
-            y = f1/d1
+            y = (f - (c/a)*e)/(d - (c/a)*b)
             x = ( e - b*y) / a
             print("16bits: x =" + str(x) +" , y =" + str(y))
         except Exception as err:
