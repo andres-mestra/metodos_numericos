@@ -2,3 +2,7 @@
 \.vscode/
 
 data\.txt
+
+*.swp
+
+*.pyc
