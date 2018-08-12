@@ -38,32 +38,31 @@ iteracion = 0
 #Verificacion del valor medio
 
 if (sign(func(ai))* sign(func(bi))<0):
-   while(error > Tol): 
-     pi = 0.5*(ai+bi)
-     pi_previo = pi
+    while(error > Tol): 
+        pi = 0.5*(ai+bi)
+        pi_previo = pi
 
-     #redefinimos los limites del intervalo
-     #if(abs(func(pi)) < Tol):
-      # print("La raiz del polinomio es %.5f"%(pi))
-     #else:
-     if(sign(func(pi)) == sign(func(ai))):
-        ai = pi
-        bi = bi
-     elif(sign(func(pi)) == sign(func(bi))):
-        ai = ai
-        bi = pi
+        #redefinimos los limites del intervalo
+        #if(abs(func(pi)) < Tol):
+          # print("La raiz del polinomio es %.5f"%(pi))
+        #else:
+        if(sign(func(pi)) == sign(func(ai))):
+            ai = pi
+            bi = bi
+        elif(sign(func(pi)) == sign(func(bi))):
+            ai = ai
+            bi = pi
 
-     pi = 0.5*(ai+bi)
-     error = abs(pi - pi_previo)
-     print("Error = %.5e"%(error))
-     iteracion = iteracion+1
-     
-     print("pi=%f\t ai=%f\t f(pi)=% f\t error=%f"%(pi,ai,func(pi),error))
+        pi = 0.5*(ai+bi)
+        error = abs(pi - pi_previo)
+        iteracion = iteracion+1
+        
+        print("pi=%f\t ai=%f\t f(pi)=% f\t error=%f"%(pi,ai,func(pi),error))
 
-     if(iteracion > Nmax):
-       print("Numero de iteraciones excedido")
-       break
+        if(iteracion > Nmax):
+            print("Numero de iteraciones excedido")
+            break
 else:
-   print("Intervalo inadecuado")
+    print("Intervalo inadecuado")
 
 print("Cero de F(x)  = %f , F(pi)= %.5f"%(pi, func(pi)))

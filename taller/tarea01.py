@@ -96,12 +96,19 @@ ax.set_xlabel(r"$\theta$", fontsize=14)
 
 
 
-def graficar(x,y,rows,colum,index,color,title,tx,ty):
+def graficar(
+    x=[],y=[],
+    rows=1,
+    colum=1,
+    index=1,
+    color="blue",
+    title="Grafico",
+    tx="eje x",ty="eje y"):
     plt.subplot(rows,colum,index)
     plt.plot(x, y, '-',c=color)
     plt.title(title)
     plt.xlabel(tx,fontsize=10)
-    #plt.axes().set_xscale('log')
+    #plt.axes()
     plt.ylabel(ty,fontsize=10)
 
 
