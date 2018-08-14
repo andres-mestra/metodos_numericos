@@ -117,11 +117,10 @@ if (sign(func(x1))* sign(func(x2))<0):
 print("Cero de F(x)  = %f , F(pi)= %f, error= %f"%(pi, func(pi), error))
 """
 #Motodo Newton-Raphson
-"""
+
 xpre =  -0.1
 xcurt = 0
 while(error > Tol):
-    #xcurt = xpre - func(xpre)/funcDerivada(xpre)
     xcurt = xpre - func(xpre)/funcDerivada(xpre)
     error = abs(xpre - xcurt)
     iteracion += 1
@@ -129,9 +128,9 @@ while(error > Tol):
     print("xpre=%f\t xcurt=%f\t f(xcurt)=% f\t error=%f"%(xpre,xcurt,func(xcurt),error))
     xpre = xcurt
     if(iteracion > Nmax):
-        print("Numero de iteraciones  exepdido")
+        print("Numero de iteraciones  excedido")
         break
-"""
+
 """
 EL metodo de newton-raphson es mas preciso y eficiente, en comparación con el metodo de
 Bisección. En ambos casos es  necesario tener una idea del comportamiento de la función,
@@ -143,6 +142,7 @@ intervalo muy cercano al punto cero
 #3
 #z^2 + 62.10z +1 = 0
 # a = 1, b = 62.10 , c = 1
+"""
 
 z1 = np.float16((-62.10 + (62.10**2 - 4)**0.5)/2)
 z1r = np.float16(-2/(62.10 + (62.10**2 - 4)**0.5))
@@ -152,6 +152,7 @@ z2r = np.float16(-2/(62.10 - (62.10**2 - 4)**0.5))
 
 print("z1=%f\t z1r=%f\t z2=% f\t z2r=%f"%(z1,z1r,z2,z2r))
 
+"""
 """
 El resultado fue el mismo, sin embargo sse debe notar que cuando usamos la forma 
 de z1 si 4ac en   la raiz es muy pequeño entonces  el resultado de la raiz de la formula
