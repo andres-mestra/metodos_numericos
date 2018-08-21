@@ -35,7 +35,7 @@ resolverSist(np.float16(1.130),
 e = 0.075 - (1.2**2 + 2*0.6**3*9.81*1.8**2)/(2*9.81*1.8**2*0.6**2)
 f = (1.2**2)/(2*9.81*1.8**2)
 
-
+"""
 def func(h):
     value  = h**3 + e*h**2 +f
     return value
@@ -45,12 +45,24 @@ def funcDerivada(h):
     return value
 
 """
+#funcion de van der waals para gas  ideal en terminos de v 
+#para ejercicio planteado en clase
+def func(v):
+    value = 10*v**3 - (10*0.04267 + 0.08205*353.2)*v**2 + 3.599*v - 3.599*0.04267
+    return value
+
+def funcDerivada(v):
+    value = 3*10*v**2 - 2*(10*0.04267 + 0.08205*353.2)*v + 3.599
+    return value 
+
+
+
 xValue = []
 yValue = []
 
 for i in range(-5000,6000):
-    yValue.append(func(i*10**-4))
-    xValue.append(i*10**-4)
+    yValue.append(func(i*10**-2))
+    xValue.append(i*10**-2)
 
 
 plt.figure()
@@ -58,7 +70,8 @@ ax = plt.axes()
 ax.plot(xValue, yValue, '.-')
 ax.grid()
 plt.show()
-"""
+
+
 
 """
 Avaluar en los intervalos
@@ -83,9 +96,8 @@ def sign(x):
   else: 
     return 0
 
-
-#Metodo bisección 
 """
+#Metodo bisección 
 if (sign(func(x1))* sign(func(x2))<0):
     while(error > Tol): 
         pi = 0.5*(x1+x2)
@@ -116,12 +128,14 @@ if (sign(func(x1))* sign(func(x2))<0):
 
 print("Cero de F(x)  = %f , F(pi)= %f, error= %f"%(pi, func(pi), error))
 """
-#Motodo Newton-Raphson
 
-xpre =  -0.1
+"""
+#Motodo Newton-Raphson
+xpre =  -0.2
 xcurt = 0
 while(error > Tol):
     xcurt = xpre - func(xpre)/funcDerivada(xpre)
+    print(func(xpre)/funcDerivada(xpre))
     error = abs(xpre - xcurt)
     iteracion += 1
     
@@ -130,6 +144,8 @@ while(error > Tol):
     if(iteracion > Nmax):
         print("Numero de iteraciones  excedido")
         break
+"""
+
 
 """
 EL metodo de newton-raphson es mas preciso y eficiente, en comparación con el metodo de
